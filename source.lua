@@ -31,9 +31,8 @@ if _G.Executed == nil then
             for i,v in pairs(_G.PetsToPing) do
                 if string.find(child.TextLabel.Text, v) and _G.RoleID ~= "" then
                     Message = " :loudspeaker: <@&" .. tostring(_G.RoleID) .. ">"
-                end
-            end
-            msg = {
+                            
+                            msg = {
                     ["content"] = Message,
                     ["embeds"] = {{
                         ["title"] = "Eggs Hatched: "..NumberSuffix(game:GetService("Players").LocalPlayer.leaderstats.Eggs.Value).."   |   ".."Coins: "..NumberSuffix(math.floor(b.Coins)).."   |   "..NumberSuffix(math.floor(b.Coins / a[game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.EggDisplay.Title.Text].Cost[2])).." Eggs remaining",
@@ -51,6 +50,10 @@ if _G.Executed == nil then
                         Body = game:GetService("HttpService"):JSONEncode(msg)
                     }
                 )
+                            
+                end
+            end
+            
             end
         end)
     end
